@@ -13,8 +13,11 @@ const images = [
   },
 ];
 const ulElement = document.querySelector('.gallery');
-images.forEach(num => {
-  const construct = `<li class="images-item"><img src="${num.url}" alt="${num.alt}"></img></li>`;
-  ulElement.insertAdjacentHTML('beforeend', construct);
-  console.log(construct);
-});
+const imagesEl = images
+  .map((item) => {
+    const construct = `<li class="images-item"><img src="${item.url}" alt="${item.alt}"></img></li>`;
+    
+  return construct;
+  }).join("");
+
+ ulElement.insertAdjacentHTML("afterbegin", imagesEl);

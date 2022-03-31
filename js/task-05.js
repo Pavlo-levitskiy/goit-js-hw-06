@@ -1,11 +1,13 @@
-const inputEl = document.querySelector('#name-input');
-const spanEl = document.querySelector('#name-output')
+const refs = {
+    input: document.querySelector("#name-input"),
+    output: document.querySelector("#name-output"),
+};
+    
 
-const inputName = () => {
-    spanEl.textContent = inputEl.value
-    if (inputEl.value.trim() === "".trim()) {
-        spanEl.textContent = 'Anonymous'
+refs.input.addEventListener("input", () => {
+    if (refs.input.value) {
+        refs.output.textContent = refs.input.value;
+    } else {
+        refs.output.textContent = "Anonymous";
     }
-}
-
-inputEl.addEventListener('input', inputName);
+});

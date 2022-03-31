@@ -1,7 +1,10 @@
-const fontSaze = document.querySelector("#font-size-control");
-const text = document.querySelector("#text");
+const refs = {
+  controlInput: document.querySelector("#font-size-control"),
+  span: document.querySelector("#text"),
+  
+};
 
-fontSaze.addEventListener("input", () => {
-  const size = fontSaze.value;
-  text.style.fontSize = `${size}px`;
+refs.controlInput.addEventListener("input", () => {
+  const size = refs.controlInput.value;
+  refs.span.style.fontSize = `${size}px`;
 });
