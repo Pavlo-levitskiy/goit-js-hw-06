@@ -1,11 +1,11 @@
 const inputEl = document.querySelector('input[data-length="6"]');
 
-const inputValidation = () => {
-  inputEl.classList.remove('invalid','valid');
-  if (inputEl.value.length === + inputEl.getAttribute('data-length')) {
-    inputEl.classList.add('valid');
+const inputValidation = (event) => {
+  event.currentTarget.classList.remove('invalid','valid');
+  if (event.currentTarget.value.length === + inputEl.getAttribute('data-length')) {
+    event.currentTarget.classList.add('valid');
   } else {
-    inputEl.classList.add('invalid');
+    event.currentTarget.classList.add('invalid');
   }
 };
 inputEl.addEventListener('blur', inputValidation);
